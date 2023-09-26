@@ -1,2 +1,5 @@
-package PACKAGE_NAME;public class MeClass {
+public class MeClass {
+    private String name;
+
+    public String getName() {return name;}
 }
