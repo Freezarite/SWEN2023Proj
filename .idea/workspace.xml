@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa2df69f-7d03-4842-97d6-ef5ee11aa4c7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/text.txt" afterDir="false" />
+    <list default="true" id="fa2df69f-7d03-4842-97d6-ef5ee11aa4c7" name="Changes" comment="Added basic user and card classes">
+      <change afterPath="$PROJECT_DIR$/src/main/java/baseClasses/battle/Battle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/Card/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Card/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/Card/MonsterCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Card/MonsterCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/Card/SpellCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Card/SpellCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/User/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/User/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,15 +36,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Markus/Desktop/http-server-single-thread",
+    "nodejs_package_manager_path": "npm"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -50,8 +55,20 @@
       <option name="presentableId" value="Default" />
       <updated>1695285857024</updated>
       <workItem from="1695285858332" duration="2039000" />
-      <workItem from="1695716447693" duration="2000000" />
+      <workItem from="1695716447693" duration="3008000" />
+      <workItem from="1701768886319" duration="633000" />
+      <workItem from="1702372034159" duration="4604000" />
+      <workItem from="1702466144617" duration="599000" />
+      <workItem from="1703169295633" duration="10411000" />
     </task>
+    <task id="LOCAL-00001" summary="Added basic user and card classes">
+      <created>1702379710680</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1702379710680</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -67,5 +84,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added basic user and card classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added basic user and card classes" />
   </component>
 </project>
