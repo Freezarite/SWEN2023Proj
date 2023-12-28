@@ -1,8 +1,8 @@
 package baseClasses.Card;
 
 public class SpellCard extends Card{
-    public SpellCard(String name, int damage, elementType element) {
-        super(name, damage, element);
+    public SpellCard(int id, String name, int damage, elementType element) {
+        super(id, name, damage, element);
     }
 
     @Override

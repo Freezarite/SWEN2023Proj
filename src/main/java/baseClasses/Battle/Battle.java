@@ -1,4 +1,4 @@
-package baseClasses.battle;
+package baseClasses.Battle;
 import baseClasses.User.User;
 import baseClasses.Card.Card;
 
@@ -29,8 +29,8 @@ public class Battle {
 
         for(int rounds = 1; rounds <= 100; rounds++) {
             //check if either player won
-            if(tempDeckPlayer1.isEmpty()) return 1;
-            if(tempDeckPlayer2.isEmpty()) return 2;
+            if(tempDeckPlayer1.isEmpty()) return 2;
+            if(tempDeckPlayer2.isEmpty()) return 1;
 
             card1 = tempDeckPlayer1.get(random.nextInt(tempDeckPlayer1.size()));
             card2 = tempDeckPlayer2.get(random.nextInt(tempDeckPlayer2.size()));
@@ -45,6 +45,7 @@ public class Battle {
                 this.battleLog += "=> " + card2.getCardName() + " wins!\n";
                 continue;
             }
+
 
             if(card2.beAttacked(card1)) {
                 tempDeckPlayer2.remove(card2);
@@ -95,28 +96,31 @@ public class Battle {
         //TODO: Send HTTP response based on battle result
 
         //TODO: Update DB based on results
+
+        System.out.print(this.battleLog);
     }
 
     private void updateELOofUsers(int winner) {
 
         if(winner == 1) {
 
-            int eloChange = (int) Math.round(20 * (1 - calcWinProb(player1.getUserElo(), player2.getUserElo())));
+            int eloChange = (int) Math.round(20 * (1 - calcWinProb(player2.getUserElo(), player1.getUserElo())));
 
-            player1.updateUserElo(eloChange);
-            player2.updateUserElo(-eloChange);
+            player1.updateUserElo(-eloChange);
+            player2.updateUserElo(eloChange);
         }
 
         if(winner == 2) {
 
-            int eloChange = (int) Math.round(20 * (1 - calcWinProb(player2.getUserElo(), player1.getUserElo())));
+            int eloChange = (int) Math.round(20 * (1 - calcWinProb(player1.getUserElo(), player2.getUserElo())));
 
-            player1.updateUserElo(eloChange);
-            player2.updateUserElo(-eloChange);
+            player1.updateUserElo(-eloChange);
+            player2.updateUserElo(eloChange);
         }
     }
 
     private double calcWinProb(int winnerElo, int loserElo) {
+
         return 1.0 / (1.0 + Math.pow(10.0, ((double) winnerElo - (double) loserElo) / 400));
     }
 

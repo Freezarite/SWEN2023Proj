@@ -12,14 +12,14 @@ public class MonsterCard extends Card{
         KRAKEN,
     }
 
-    private static monsterType typ;
+    private final monsterType typ;
 
     public monsterType getMonsterType() {
         return typ;
     }
 
-    public MonsterCard(String name, int damage, elementType element, monsterType mTyp) {
-        super(name, damage, element);
+    public MonsterCard(int id,String name, int damage, elementType element, monsterType mTyp) {
+        super(id, name, damage, element);
         typ = mTyp;
     }
 
@@ -30,6 +30,7 @@ public class MonsterCard extends Card{
         if(attacker instanceof MonsterCard attackerMonster) {
             switch (attackerMonster.getMonsterType())
             {
+
                 case ORK:
                     if (typ.equals(monsterType.WIZZARD)) return true;
                     return false;
@@ -45,8 +46,10 @@ public class MonsterCard extends Card{
                     return false;
 
                 case DRAGON:
-                    if(typ.equals(monsterType.GOBLIN))
+
+                    if(typ == monsterType.GOBLIN) {
                         return true;
+                    }
 
                     return false;
             }
@@ -64,4 +67,5 @@ public class MonsterCard extends Card{
     public int getBattleDamage(Card enemyCard) {
         return this.getCardDamage();
     }
+
 }
