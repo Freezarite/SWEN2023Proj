@@ -9,6 +9,8 @@ public abstract class Card {
         PLANT,
     }
 
+    private int id;
+
     private elementType cardElement;
 
     private String cardName;
@@ -33,7 +35,8 @@ public abstract class Card {
         return true;
     }
 
-    public Card(String name, int damage, elementType element) {
+    public Card(int id, String name, int damage, elementType element) {
+        this.id = id;
         this.cardElement = element;
         this.cardName = name;
         this.cardDamage = damage;

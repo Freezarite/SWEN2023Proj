@@ -4,13 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa2df69f-7d03-4842-97d6-ef5ee11aa4c7" name="Changes" comment="Added basic user and card classes">
-      <change afterPath="$PROJECT_DIR$/src/main/java/baseClasses/battle/Battle.java" afterDir="false" />
+    <list default="true" id="fa2df69f-7d03-4842-97d6-ef5ee11aa4c7" name="Changes" comment="Extended User and Card Class&#10;Added Battle class">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Server.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Battle/BattleTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/baseClasses/DB/UserDBHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MeClass.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/Card/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Card/Card.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/Card/MonsterCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Card/MonsterCard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/Card/SpellCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Card/SpellCard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/User/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/User/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/battle/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Battle/Battle.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,10 +49,64 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Markus/Desktop/http-server-single-thread",
-    "nodejs_package_manager_path": "npm"
+    "last_opened_file_path": "C:/Users/Markus/IdeaProjects/FH Projects/SWEN2023Proj",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
 }]]></component>
+  <component name="RunManager" selected="JUnit.BattleTest.testEloCalculationsOfDifferentUsers">
+    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Server" />
+      <module name="SWEN2023Proj" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BattleTest.testEloCalculationOfUsers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SWEN2023Proj" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="baseClasses.Battle.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="baseClasses.Battle" />
+      <option name="MAIN_CLASS_NAME" value="baseClasses.Battle.BattleTest" />
+      <option name="METHOD_NAME" value="testEloCalculationOfUsers" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BattleTest.testEloCalculationsOfDifferentUsers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SWEN2023Proj" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="baseClasses.Battle.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="baseClasses.Battle" />
+      <option name="MAIN_CLASS_NAME" value="baseClasses.Battle.BattleTest" />
+      <option name="METHOD_NAME" value="testEloCalculationsOfDifferentUsers" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.BattleTest.testEloCalculationsOfDifferentUsers" />
+        <item itemvalue="Application.Server" />
+        <item itemvalue="JUnit.BattleTest.testEloCalculationOfUsers" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -59,7 +120,8 @@
       <workItem from="1701768886319" duration="633000" />
       <workItem from="1702372034159" duration="4604000" />
       <workItem from="1702466144617" duration="599000" />
-      <workItem from="1703169295633" duration="10411000" />
+      <workItem from="1703169295633" duration="20471000" />
+      <workItem from="1703702981842" duration="4653000" />
     </task>
     <task id="LOCAL-00001" summary="Added basic user and card classes">
       <created>1702379710680</created>
@@ -68,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1702379710680</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Extended User and Card Class&#10;Added Battle class">
+      <created>1703426178849</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1703426178849</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -87,6 +156,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added basic user and card classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added basic user and card classes" />
+    <MESSAGE value="Extended User and Card Class&#10;Added Battle class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Extended User and Card Class&#10;Added Battle class" />
   </component>
 </project>

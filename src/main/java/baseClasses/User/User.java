@@ -40,7 +40,8 @@ public class User {
     public int getUserWins() {return this.userWins;}
     public int getUserLosses() {return this.userLosses;}
     public int getUserElo() {return this.userElo;}
-    public void editStack() {
+    public void editStack(List<Card> newStack) {
+        this.stack = newStack;
         //TODO: add edit functionality with update in db
     }
 }
