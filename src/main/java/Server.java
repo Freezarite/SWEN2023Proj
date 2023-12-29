@@ -30,7 +30,7 @@ public class Server {
         User user2 = new User("Player2", 0,0, 300);
 
         user1.editStack(userDeck1);
-        user2.editStack(userDeck2);
+        user2.editStack(userDeck1);
 
         Battle newBattle = new Battle(user1, user2);
 

@@ -93,6 +93,10 @@ public class Battle {
             this.battleLog += player2.getUsername() + " wins! ELOs have been changed accordingly!";
         }
 
+        if(winner == 0) {
+                this.battleLog += "This battle ended in a Draw! ELOs have not been changed!";
+        }
+
         //TODO: Send HTTP response based on battle result
 
         //TODO: Update DB based on results
@@ -130,5 +134,9 @@ public class Battle {
 
     public User returnPlayer2() {
         return this.player2;
+    }
+
+    public String getBattleLog() {
+        return this.battleLog;
     }
 }
