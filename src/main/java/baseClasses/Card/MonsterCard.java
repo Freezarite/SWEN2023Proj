@@ -36,7 +36,7 @@ public class MonsterCard extends Card{
                     return false;
 
                 case ELVES:
-                    if (!typ.equals(monsterType.DRAGON))
+                    if (typ.equals(monsterType.DRAGON))
                         if (this.getCardElement().equals(attackerMonster.getCardElement()))
                             return true;
 

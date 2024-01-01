@@ -8,9 +8,12 @@ public class SpellCard extends Card{
     @Override
     public int getBattleDamage(Card enemyCard) {
         if (enemyCard instanceof MonsterCard enemyMonster) {
-            if (enemyMonster.equals(MonsterCard.monsterType.KRAKEN))
+            if (enemyMonster.getMonsterType().equals(MonsterCard.monsterType.KRAKEN))
                 return 0;
         }
+
+        if(this.getCardElement().equals(enemyCard.getCardElement()))
+            return this.getCardDamage();
 
         switch (this.getCardElement()) {
             case FIRE:
@@ -31,7 +34,7 @@ public class SpellCard extends Card{
                 if (enemyCard.getCardElement().equals(elementType.FIRE))
                     return getCardDamage() * 2;
         }
-        return getCardDamage();
+        return this.getCardDamage();
     }
 
     @Override
