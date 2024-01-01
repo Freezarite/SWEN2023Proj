@@ -9,11 +9,11 @@ public abstract class Card {
         PLANT,
     }
 
-    private int id;
+    private final int id;
 
-    private elementType cardElement;
+    private final elementType cardElement;
 
-    private String cardName;
+    private final String cardName;
 
     private final int cardDamage;
 
@@ -45,4 +45,9 @@ public abstract class Card {
     public String getCardName() {
         return this.cardName;
     }
+
+    public int getId() {
+        return this.id;
+    }
 }
+

@@ -4,20 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa2df69f-7d03-4842-97d6-ef5ee11aa4c7" name="Changes" comment="Extended User and Card Class&#10;Added Battle class">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Server.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Battle/BattleTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/baseClasses/DB/UserDBHandler.java" afterDir="false" />
+    <list default="true" id="fa2df69f-7d03-4842-97d6-ef5ee11aa4c7" name="Changes" comment="Added additional Unittests for the BattleClass&#10;Also added draw option to battlelog">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/baseClasses/HTTP/HTTPMethod.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/baseClasses/HTTP/HTTPRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/baseClasses/HTTP/HTTPRequestHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/baseClasses/HTTP/HTTPResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/baseClasses/HTTP/HTTPStatusCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/baseClasses/HTTP/Route.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/baseClasses/HTTP/Router.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/baseClasses/HTTP/Service.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Server/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MeClass.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/Battle/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Battle/Battle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/Card/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Card/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/Card/MonsterCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Card/MonsterCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/Card/SpellCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Card/SpellCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/User/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/User/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/battle/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Battle/Battle.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +30,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -43,23 +48,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Markus/IdeaProjects/FH Projects/SWEN2023Proj",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Markus/IdeaProjects/FH Projects/SWEN2023Proj&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
-  <component name="RunManager" selected="JUnit.BattleTest.testEloCalculationsOfDifferentUsers">
+}</component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean install" />
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.ServerTest.testServerStartAndStop">
     <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Server" />
       <module name="SWEN2023Proj" />
@@ -67,7 +80,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BattleTest.testEloCalculationOfUsers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BattleTest.checkIfUsersAreUpdatedCorrectly" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SWEN2023Proj" />
       <extension name="coverage">
         <pattern>
@@ -77,13 +90,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="baseClasses.Battle" />
       <option name="MAIN_CLASS_NAME" value="baseClasses.Battle.BattleTest" />
-      <option name="METHOD_NAME" value="testEloCalculationOfUsers" />
+      <option name="METHOD_NAME" value="checkIfUsersAreUpdatedCorrectly" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BattleTest.testEloCalculationsOfDifferentUsers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BattleTest.testIfDrawIsPossible" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SWEN2023Proj" />
       <extension name="coverage">
         <pattern>
@@ -93,7 +106,38 @@
       </extension>
       <option name="PACKAGE_NAME" value="baseClasses.Battle" />
       <option name="MAIN_CLASS_NAME" value="baseClasses.Battle.BattleTest" />
-      <option name="METHOD_NAME" value="testEloCalculationsOfDifferentUsers" />
+      <option name="METHOD_NAME" value="testIfDrawIsPossible" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SWEN2023Proj" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ServerTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ServerTest" />
+      <option name="MAIN_CLASS_NAME" value="ServerTest.ServerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServerTest.testServerStartAndStop" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SWEN2023Proj" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ServerTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ServerTest" />
+      <option name="MAIN_CLASS_NAME" value="ServerTest.ServerTest" />
+      <option name="METHOD_NAME" value="testServerStartAndStop" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -101,9 +145,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BattleTest.testEloCalculationsOfDifferentUsers" />
+        <item itemvalue="JUnit.ServerTest.testServerStartAndStop" />
+        <item itemvalue="JUnit.ServerTest" />
+        <item itemvalue="JUnit.BattleTest.checkIfUsersAreUpdatedCorrectly" />
+        <item itemvalue="JUnit.BattleTest.testIfDrawIsPossible" />
         <item itemvalue="Application.Server" />
-        <item itemvalue="JUnit.BattleTest.testEloCalculationOfUsers" />
       </list>
     </recent_temporary>
   </component>
@@ -121,7 +167,9 @@
       <workItem from="1702372034159" duration="4604000" />
       <workItem from="1702466144617" duration="599000" />
       <workItem from="1703169295633" duration="20471000" />
-      <workItem from="1703702981842" duration="4653000" />
+      <workItem from="1703702981842" duration="16829000" />
+      <workItem from="1704134074581" duration="401000" />
+      <workItem from="1704134765815" duration="2054000" />
     </task>
     <task id="LOCAL-00001" summary="Added basic user and card classes">
       <created>1702379710680</created>
@@ -137,7 +185,21 @@
       <option name="project" value="LOCAL" />
       <updated>1703426178849</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Bugfixes for BattleClass&#10;Codecleanup&#10;Implemented 2 Unittests for Elo calculation&#10;Bugfixing with DB">
+      <created>1703787244150</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1703787244150</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added additional Unittests for the BattleClass&#10;Also added draw option to battlelog">
+      <created>1703864760109</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1703864760109</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -157,6 +219,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added basic user and card classes" />
     <MESSAGE value="Extended User and Card Class&#10;Added Battle class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Extended User and Card Class&#10;Added Battle class" />
+    <MESSAGE value="Bugfixes for BattleClass&#10;Codecleanup&#10;Implemented 2 Unittests for Elo calculation&#10;Bugfixing with DB" />
+    <MESSAGE value="Added additional Unittests for the BattleClass&#10;Also added draw option to battlelog" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added additional Unittests for the BattleClass&#10;Also added draw option to battlelog" />
   </component>
 </project>
