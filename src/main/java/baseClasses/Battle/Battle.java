@@ -97,8 +97,6 @@ public class Battle {
                 this.battleLog += "This battle ended in a Draw! ELOs have not been changed!";
         }
 
-        //TODO: Send HTTP response based on battle result
-
         //TODO: Update DB based on results
 
         System.out.print(this.battleLog);
