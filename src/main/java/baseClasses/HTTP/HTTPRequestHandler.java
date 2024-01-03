@@ -1,5 +1,7 @@
 package baseClasses.HTTP;
 
+import baseClasses.Services.Service;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -40,7 +42,7 @@ public class HTTPRequestHandler implements Runnable {
                 }
 
                 System.out.println("creating Response!");
-                response = service.response(request);
+                response = service.handleRequest(request);
             }
 
             OutputStream outputStream = this.serviceSocket.getOutputStream();
