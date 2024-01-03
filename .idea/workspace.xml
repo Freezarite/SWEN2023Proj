@@ -4,13 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa2df69f-7d03-4842-97d6-ef5ee11aa4c7" name="Changes" comment="Added HTTP functionality classes&#10;some other minor code improvments">
-      <change afterPath="$PROJECT_DIR$/src/test/java/BattleTest/BattleTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/CardTest/MonsterCardTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/CardTest/SpellCardTest.java" afterDir="false" />
+    <list default="true" id="fa2df69f-7d03-4842-97d6-ef5ee11aa4c7" name="Changes" comment="Added further Unittests for MonsterCard and SpellCard&#10;Moved Unittests for Battle-Class into the Test-Folder">
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Battle/BattleHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Card/Package.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/baseClasses/DB/CardDBHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/baseClasses/DB/DBBasic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Services/BattleService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/Card/MonsterCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Card/MonsterCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/Card/SpellCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Card/SpellCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/Battle/BattleTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/DB/UserDBHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/DB/UserDBHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/HTTP/HTTPRequestHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/HTTP/HTTPRequestHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/HTTP/Route.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/HTTP/Route.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/HTTP/Router.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/HTTP/Router.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/HTTP/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Services/Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +65,11 @@
     ]
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="baseClasses.Services" />
+    </key>
+  </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn clean install" />
@@ -168,7 +181,7 @@
       <workItem from="1703169295633" duration="20471000" />
       <workItem from="1703702981842" duration="16829000" />
       <workItem from="1704134074581" duration="401000" />
-      <workItem from="1704134765815" duration="4112000" />
+      <workItem from="1704134765815" duration="11376000" />
     </task>
     <task id="LOCAL-00001" summary="Added basic user and card classes">
       <created>1702379710680</created>
@@ -205,7 +218,14 @@
       <option name="project" value="LOCAL" />
       <updated>1704136917555</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added further Unittests for MonsterCard and SpellCard&#10;Moved Unittests for Battle-Class into the Test-Folder">
+      <created>1704150630306</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1704150630306</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,6 +248,7 @@
     <MESSAGE value="Bugfixes for BattleClass&#10;Codecleanup&#10;Implemented 2 Unittests for Elo calculation&#10;Bugfixing with DB" />
     <MESSAGE value="Added additional Unittests for the BattleClass&#10;Also added draw option to battlelog" />
     <MESSAGE value="Added HTTP functionality classes&#10;some other minor code improvments" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added HTTP functionality classes&#10;some other minor code improvments" />
+    <MESSAGE value="Added further Unittests for MonsterCard and SpellCard&#10;Moved Unittests for Battle-Class into the Test-Folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added further Unittests for MonsterCard and SpellCard&#10;Moved Unittests for Battle-Class into the Test-Folder" />
   </component>
 </project>

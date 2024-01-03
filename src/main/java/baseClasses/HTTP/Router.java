@@ -1,5 +1,7 @@
 package baseClasses.HTTP;
 
+import baseClasses.Services.Service;
+
 import java.util.*;
 import java.util.stream.IntStream;
 

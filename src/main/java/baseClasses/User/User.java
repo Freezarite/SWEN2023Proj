@@ -14,6 +14,7 @@ public class User {
     private int userElo;
     private int userWins;
     private int userLosses;
+    private int coins;
 
     public User(String username, int wins, int losses, int elo) {
         this.username = username;
@@ -43,5 +44,11 @@ public class User {
     public void editStack(List<Card> newStack) {
         this.stack = newStack;
         //TODO: add edit functionality with update in db
+    }
+    public int getCoins() {
+        return this.coins;
+    }
+    public void spendCoins(int price) {
+        this.coins -= price;
     }
 }
