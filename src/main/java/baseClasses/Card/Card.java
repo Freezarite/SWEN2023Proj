@@ -1,5 +1,7 @@
 package baseClasses.Card;
 
+import java.util.UUID;
+
 public abstract class Card {
 
     public enum elementType {
@@ -9,7 +11,7 @@ public abstract class Card {
         PLANT,
     }
 
-    private final int id;
+    private final UUID id;
 
     private final elementType cardElement;
 
@@ -35,7 +37,7 @@ public abstract class Card {
         return true;
     }
 
-    public Card(int id, String name, int damage, elementType element) {
+    public Card(UUID id, String name, int damage, elementType element) {
         this.id = id;
         this.cardElement = element;
         this.cardName = name;
@@ -46,7 +48,7 @@ public abstract class Card {
         return this.cardName;
     }
 
-    public int getId() {
+    public UUID getId() {
         return this.id;
     }
 }

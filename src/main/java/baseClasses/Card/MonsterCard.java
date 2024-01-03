@@ -1,5 +1,7 @@
 package baseClasses.Card;
 
+import java.util.UUID;
+
 public class MonsterCard extends Card{
 
     public enum monsterType {
@@ -18,7 +20,7 @@ public class MonsterCard extends Card{
         return typ;
     }
 
-    public MonsterCard(int id,String name, int damage, elementType element, monsterType mTyp) {
+    public MonsterCard(UUID id, String name, int damage, elementType element, monsterType mTyp) {
         super(id, name, damage, element);
         typ = mTyp;
     }

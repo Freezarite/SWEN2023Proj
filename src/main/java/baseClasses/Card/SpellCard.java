@@ -1,7 +1,9 @@
 package baseClasses.Card;
 
+import java.util.UUID;
+
 public class SpellCard extends Card{
-    public SpellCard(int id, String name, int damage, elementType element) {
+    public SpellCard(UUID id, String name, int damage, elementType element) {
         super(id, name, damage, element);
     }
 
