@@ -7,6 +7,7 @@ import baseClasses.Card.SpellCard;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class CardDBHandler extends DBBasic {
 
@@ -14,7 +15,7 @@ public class CardDBHandler extends DBBasic {
         try (Connection connection = DriverManager.getConnection(DB_URL, USER, PASSWORD)) {
             String sql = "INSERT INTO cards(id, name, damage, element, type) VALUES (?, ?, ?, ?, ?)";
             try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
-                preparedStatement.setInt(1, card.getId());
+                preparedStatement.setString(1, card.getId().toString());
                 preparedStatement.setString(2, card.getCardName());
                 preparedStatement.setInt(3, card.getCardDamage());
                 preparedStatement.setString(4, card.getCardElement().toString());
@@ -26,11 +27,11 @@ public class CardDBHandler extends DBBasic {
         }
     }
 
-    public static Card getCardById(int cardId) {
+    public static Card getCardById(UUID cardId) {
         try (Connection connection = DriverManager.getConnection(DB_URL, USER, PASSWORD)) {
             String sql = "SELECT * FROM cards WHERE id=?";
             try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
-                preparedStatement.setInt(1, cardId);
+                preparedStatement.setString(1, cardId.toString());
                 try (ResultSet resultSet = preparedStatement.executeQuery()) {
                     if (resultSet.next()) {
                         String name = resultSet.getString("name");
@@ -60,7 +61,7 @@ public class CardDBHandler extends DBBasic {
                 preparedStatement.setInt(2, card.getCardDamage());
                 preparedStatement.setString(3, card.getCardElement().toString());
                 preparedStatement.setString(4, (card instanceof MonsterCard) ? ((MonsterCard) card).getMonsterType().toString() : null);
-                preparedStatement.setInt(5, card.getId());
+                preparedStatement.setString(5, card.getId().toString());
                 preparedStatement.executeUpdate();
             }
         } catch (SQLException e) {
@@ -87,7 +88,7 @@ public class CardDBHandler extends DBBasic {
             try (Statement statement = connection.createStatement()) {
                 try (ResultSet resultSet = statement.executeQuery(sql)) {
                     while (resultSet.next()) {
-                        int id = resultSet.getInt("id");
+                        UUID id = UUID.fromString(resultSet.getString("id"));
                         String name = resultSet.getString("name");
                         int damage = resultSet.getInt("damage");
                         Card.elementType element = Card.elementType.valueOf(resultSet.getString("element"));

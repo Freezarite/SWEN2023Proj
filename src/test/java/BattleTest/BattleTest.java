@@ -13,6 +13,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -33,9 +34,9 @@ public class BattleTest {
         newBattle = new Battle(player1, player2);
 
         //create Decks for testing purposes
-        MonsterCard goblin = new MonsterCard(1, "Goblin-Warrior", 10, Card.elementType.NORMAL, MonsterCard.monsterType.GOBLIN);
-        MonsterCard dragon = new MonsterCard(2, "Fire-Dragon", 15, Card.elementType.FIRE, MonsterCard.monsterType.DRAGON);
-        SpellCard waveCrash = new SpellCard(3, "Wave-Crash", 20, Card.elementType.WATER);
+        MonsterCard goblin = new MonsterCard(UUID.randomUUID(), "Goblin-Warrior", 10, Card.elementType.NORMAL, MonsterCard.monsterType.GOBLIN);
+        MonsterCard dragon = new MonsterCard(UUID.randomUUID(), "Fire-Dragon", 15, Card.elementType.FIRE, MonsterCard.monsterType.DRAGON);
+        SpellCard waveCrash = new SpellCard(UUID.randomUUID(), "Wave-Crash", 20, Card.elementType.WATER);
 
         List<Card> userDeck2 = new ArrayList<>();
 
