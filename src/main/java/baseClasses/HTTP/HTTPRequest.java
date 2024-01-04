@@ -14,7 +14,7 @@ public class HTTPRequest {
 
     private final String version;
 
-    private final Map<String, String> HTTPHeaders = new HashMap();
+    private final Map<String, String> HTTPHeaders = new HashMap<>();
 
     private final String body;
 
@@ -28,16 +28,14 @@ public class HTTPRequest {
             this.path = requestLine[1];
             this.version = requestLine[2];
 
-            buffer.lines()
-                    .takeWhile(lines -> !lines.isEmpty()) // does this till lines is empty
-                    .map(lines -> lines.split(": ", 2)) // transforms each lines into an array of entries
-                    .forEach(headerEntry -> this.HTTPHeaders.put(headerEntry[0], headerEntry[1])); // adds each entry to the map
+            for (line = buffer.readLine(); !line.isEmpty(); line = buffer.readLine()) {
+                String[] headerEntry = line.split(": ", 2);
+                this.HTTPHeaders.put(headerEntry[0], headerEntry[1]);
+            }
 
-            if(this.HTTPHeaders.containsKey("Content-Length"))
-                this.body = new String(new char[Integer.parseInt(this.HTTPHeaders.get("Content-Length"))]);
-            else
-                this.body = null;
-
+            int contentLength = this.HTTPHeaders.containsKey("Content-Length") ? Integer.parseInt(this.HTTPHeaders.get("Content-Length")) : 0;
+            char[] charBuffer = new char[contentLength];
+            this.body = buffer.read(charBuffer, 0, contentLength) > 0 ? new String(charBuffer) : null;
             return;
         }
 

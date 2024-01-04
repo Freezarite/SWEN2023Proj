@@ -4,14 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa2df69f-7d03-4842-97d6-ef5ee11aa4c7" name="Changes" comment="Startet BattleHandler and Services&#10;Added Package Class for buying new Cards&#10;Added some DB functionality&#10;Extended User to have Coins for the purchase of Packages&#10;Some further minor improvements">
+    <list default="true" id="fa2df69f-7d03-4842-97d6-ef5ee11aa4c7" name="Changes" comment="Much stuff added! such wow!">
+      <change afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Server/SessionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Services/CardService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Services/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/baseClasses/User/UserCredentials.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/baseClasses/User/UserData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/baseClasses/User/UserInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/baseClasses/User/UserStats.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/DBTest/CardDBHandlerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/DBTest/UserDBHandlerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/Card/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Card/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/Card/MonsterCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Card/MonsterCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/Card/SpellCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Card/SpellCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/DB/CardDBHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/DB/CardDBHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/BattleTest/BattleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BattleTest/BattleTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/CardTest/MonsterCardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CardTest/MonsterCardTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/DB/DBBasic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/DB/DBBasic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/DB/UserDBHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/DB/UserDBHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/HTTP/HTTPRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/HTTP/HTTPRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/HTTP/HTTPResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/HTTP/HTTPResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/HTTP/Router.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/HTTP/Router.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/Server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Server/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/Services/BattleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Services/BattleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/User/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/User/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +40,7 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
+        <option value="Record" />
         <option value="Class" />
       </list>
     </option>
@@ -33,31 +51,52 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2VhQUeIAhx8IglPXUimgoyCp8Vj" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Markus/IdeaProjects/FH Projects/SWEN2023Proj&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.BattleTest.executor": "Run",
+    "JUnit.CardDBHandlerTest.addMonsterCardTest.executor": "Run",
+    "JUnit.UserDBHandlerTest.createUser_Success.executor": "Run",
+    "JUnit.UserDBHandlerTest.testUpdateUser.executor": "Run",
+    "Maven.SWEN2023Proj [clean,install].executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "C:/Users/Markus/IdeaProjects/SWEN2023Proj/src/test/java",
+    "last_opened_file_path": "C:/Users/Markus/IdeaProjects/FH Projects/SWEN2023Proj",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="baseClasses.Services" />
@@ -68,7 +107,20 @@
       <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.BattleTest">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="baseClasses.Main" />
+      <module name="SWEN2023Proj" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="baseClasses.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BattleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SWEN2023Proj" />
       <extension name="coverage">
@@ -84,65 +136,49 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BattleTest.testEloCalculationOfEqualUsers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CardDBHandlerTest.addMonsterCardTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SWEN2023Proj" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="BattleTest.*" />
+          <option name="PATTERN" value="DBTest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="BattleTest" />
-      <option name="MAIN_CLASS_NAME" value="BattleTest.BattleTest" />
-      <option name="METHOD_NAME" value="testEloCalculationOfEqualUsers" />
+      <option name="PACKAGE_NAME" value="DBTest" />
+      <option name="MAIN_CLASS_NAME" value="DBTest.CardDBHandlerTest" />
+      <option name="METHOD_NAME" value="addMonsterCardTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MonsterCardTest.testInstantKillOrkVsWizzard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserDBHandlerTest.createUser_Success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SWEN2023Proj" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="CardTest.*" />
+          <option name="PATTERN" value="DBTest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="CardTest" />
-      <option name="MAIN_CLASS_NAME" value="CardTest.MonsterCardTest" />
-      <option name="METHOD_NAME" value="testInstantKillOrkVsWizzard" />
+      <option name="PACKAGE_NAME" value="DBTest" />
+      <option name="MAIN_CLASS_NAME" value="DBTest.UserDBHandlerTest" />
+      <option name="METHOD_NAME" value="createUser_Success" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SpellCardTest.testEqualElementsNoEffect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserDBHandlerTest.testUpdateUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SWEN2023Proj" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="CardTest.*" />
+          <option name="PATTERN" value="DBTest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="CardTest" />
-      <option name="MAIN_CLASS_NAME" value="CardTest.SpellCardTest" />
-      <option name="METHOD_NAME" value="testEqualElementsNoEffect" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SpellCardTest.testFireElementAgainstWaterElement" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SWEN2023Proj" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="CardTest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="CardTest" />
-      <option name="MAIN_CLASS_NAME" value="CardTest.SpellCardTest" />
-      <option name="METHOD_NAME" value="testFireElementAgainstWaterElement" />
+      <option name="PACKAGE_NAME" value="DBTest" />
+      <option name="MAIN_CLASS_NAME" value="DBTest.UserDBHandlerTest" />
+      <option name="METHOD_NAME" value="testUpdateUser" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -150,13 +186,21 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.CardDBHandlerTest.addMonsterCardTest" />
+        <item itemvalue="JUnit.UserDBHandlerTest.createUser_Success" />
+        <item itemvalue="JUnit.UserDBHandlerTest.testUpdateUser" />
         <item itemvalue="JUnit.BattleTest" />
-        <item itemvalue="JUnit.SpellCardTest.testEqualElementsNoEffect" />
-        <item itemvalue="JUnit.SpellCardTest.testFireElementAgainstWaterElement" />
-        <item itemvalue="JUnit.MonsterCardTest.testInstantKillOrkVsWizzard" />
-        <item itemvalue="JUnit.BattleTest.testEloCalculationOfEqualUsers" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-19.0.2-corretto-19.0.2-f644763e9732-1e16d6ec" />
+        <option value="jdk-21.0.1-openjdk-21.0.1-f644763e9732-f98dd351" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -175,6 +219,10 @@
       <workItem from="1703702981842" duration="16829000" />
       <workItem from="1704134074581" duration="401000" />
       <workItem from="1704134765815" duration="13788000" />
+      <workItem from="1704333201456" duration="132000" />
+      <workItem from="1704333344098" duration="201000" />
+      <workItem from="1704309686121" duration="3838000" />
+      <workItem from="1704380814918" duration="23344000" />
     </task>
     <task id="LOCAL-00001" summary="Added basic user and card classes">
       <created>1702379710680</created>
@@ -250,6 +298,14 @@
     <MESSAGE value="Added HTTP functionality classes&#10;some other minor code improvments" />
     <MESSAGE value="Added further Unittests for MonsterCard and SpellCard&#10;Moved Unittests for Battle-Class into the Test-Folder" />
     <MESSAGE value="Startet BattleHandler and Services&#10;Added Package Class for buying new Cards&#10;Added some DB functionality&#10;Extended User to have Coins for the purchase of Packages&#10;Some further minor improvements" />
-    <option name="LAST_COMMIT_MESSAGE" value="Startet BattleHandler and Services&#10;Added Package Class for buying new Cards&#10;Added some DB functionality&#10;Extended User to have Coins for the purchase of Packages&#10;Some further minor improvements" />
+    <MESSAGE value="Much stuff added! such wow!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Much stuff added! such wow!" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="requestHandler" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

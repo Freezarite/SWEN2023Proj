@@ -8,9 +8,10 @@ import baseClasses.Card.Card;
 
 public class User {
     private String username;
+    private String name;
     private List<Card> collection;
     private List<Card> stack;
-
+    private boolean admin;
     private int userElo;
     private int userWins;
     private int userLosses;
@@ -23,6 +24,7 @@ public class User {
         this.userWins = wins;
         this.userLosses = losses;
         this.userElo = elo;
+        this.admin = false;
     }
 
     public List<Card> getStack() {
@@ -51,4 +53,16 @@ public class User {
     public void spendCoins(int price) {
         this.coins -= price;
     }
+
+    public void makeAdmin() {
+        this.admin = true;
+    }
+    public boolean getAdminStatus() {
+        return this.admin;
+    }
+    public void removeAdmin() {
+        this.admin = false;
+    }
+    public String getName() {return this.name;}
+    public void setName(String name) {this.name = name;}
 }

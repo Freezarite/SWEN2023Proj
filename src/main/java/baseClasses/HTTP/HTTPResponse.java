@@ -18,6 +18,17 @@ public class HTTPResponse {
         this.content = content;
     }
 
+    public HTTPResponse(HTTPStatusCode httpStatusCode) {
+        this.httpStatusCode = httpStatusCode;
+        if(httpStatusCode == HTTPStatusCode.NO_CONTENT) {
+            this.content = null;
+            this.contentType = null;
+            return ;
+        }
+        this.content = "";
+        this.contentType = "";
+    }
+
     public String getRequest() {
 
         String localDatetime = DateTimeFormatter.RFC_1123_DATE_TIME.format(ZonedDateTime.now(ZoneId.of("UTC")));
