@@ -102,7 +102,6 @@ public class CardDBHandler implements DBBasic {
         return cards;
     }
 
-    // Update
     public void updateCard(Card card) throws SQLException {
         if (card instanceof MonsterCard) {
             try (PreparedStatement statement = connection.prepareStatement(

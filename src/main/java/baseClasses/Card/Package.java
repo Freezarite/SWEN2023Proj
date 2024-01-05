@@ -17,15 +17,6 @@ public class Package {
         this.price = price;
     }
 
-    public void userBuysMe(User user) {
-
-        if(user.getCoins() >= this.price) {
-            //TODO: Make DB call to add content to Users collection;
-            return;
-        }
-        System.out.println("User doesnt have enough Coins!");
-    }
-
     public String getPackageName() {
         return this.packageName;
     }

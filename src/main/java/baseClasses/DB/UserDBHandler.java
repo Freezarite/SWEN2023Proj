@@ -23,41 +23,6 @@ public class UserDBHandler implements DBBasic{
         }
     }
 
-    public boolean createUser(User user, String password) {
-        try {
-            if (userExists(user.getUsername())) {
-                System.out.println("User with username " + user.getUsername() + " already exists.");
-                return false;
-            }
-
-            // If the user doesn't exist, proceed with the insertion
-            try (PreparedStatement statement = connection.prepareStatement(
-                    "INSERT INTO users (username, name, password, user_wins, user_losses, user_elo, coins, admin) " +
-                            "VALUES (?, ?, ?, ?, ?, ?, ?, ?)")) {
-                statement.setString(1, user.getUsername());
-                statement.setString(2, user.getName()); // Assuming you have a getName() method in your User class
-                statement.setString(3, password); // Assuming you have a getPassword() method in your User class
-                statement.setInt(4, user.getUserWins());
-                statement.setInt(5, user.getUserLosses());
-                statement.setInt(6, user.getUserElo());
-                statement.setInt(7, 20);
-                statement.setBoolean(8, user.getAdminStatus());
-                // Assuming you have appropriate methods for collection_id and stack_id in your User class
-
-                int rowsAffected = statement.executeUpdate();
-                if (rowsAffected > 0) {
-                    System.out.println("User with username " + user.getUsername() + " created successfully.");
-                    return true;
-                } else {
-                    System.out.println("Failed to create user with username " + user.getUsername() + ".");
-                    return false;
-                }
-            }
-        } catch (SQLException e) {
-            e.printStackTrace(); // Handle the exception properly in your application
-            return false;
-        }
-    }
 
     public boolean createUser(String username, String password) {
         try {
@@ -355,5 +320,54 @@ public class UserDBHandler implements DBBasic{
         }
     }
 
+    public User getUserInstanceFromDB(String username) {
+        try(PreparedStatement statement = connection.prepareStatement(
+                "SELECT name, user_wins, user_losses, user_elo, stack_id FROM users WHERE username = ?"
+        )) {
+
+            statement.setString(1, username);
+            ResultSet resultSet = statement.executeQuery();
+
+            if(!resultSet.next())
+                return null;
+
+            User output = new User(resultSet.getString("name"), resultSet.getInt("user_wins"),
+                    resultSet.getInt("user_losses"), resultSet.getInt("user_elo"));
+
+            List<Card> userStack = new ArrayList<>();
+
+            String[] idsString = resultSet.getObject("stack_id").toString().replace("{", "")
+                    .replace("}", "").split(",");
+
+            for(String id : idsString) {
+                userStack.add(new CardDBHandler().getCard(UUID.fromString(id)));
+            }
+
+            for(Card card : userStack)
+                System.out.println(card.getCardName());
+
+            output.editStack(userStack);
+
+            return output;
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void updateUserBasedOnInstance(User user, String username) {
+        try(PreparedStatement preparedStatement = connection.prepareStatement(
+                "UPDATE users SET user_wins = ?, user_losses = ?, user_elo = ? WHERE username = ?"
+        )) {
+
+            preparedStatement.setInt(1, user.getUserWins());
+            preparedStatement.setInt(2, user.getUserLosses());
+            preparedStatement.setInt(3, user.getUserElo());
+            preparedStatement.setString(4, username);
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
 
