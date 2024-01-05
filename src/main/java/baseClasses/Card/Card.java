@@ -9,6 +9,7 @@ public abstract class Card {
         WATER,
         FIRE,
         PLANT,
+        UNDEAD,
     }
 
     private final UUID id;

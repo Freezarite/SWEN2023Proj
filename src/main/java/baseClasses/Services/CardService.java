@@ -9,11 +9,14 @@ import baseClasses.HTTP.HTTPRequest;
 import baseClasses.HTTP.HTTPResponse;
 import baseClasses.HTTP.HTTPStatusCode;
 import baseClasses.Server.SessionHandler;
+import baseClasses.User.UserData;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 public class CardService implements Service{
 
@@ -38,8 +41,63 @@ public class CardService implements Service{
 
             if(request.getPath().split("/")[1].equals("deck")) {
                 return switch (request.getMethod()) {
-                    case GET -> new HTTPResponse(HTTPStatusCode.NOT_IMPLEMENTED);
-                    case PUT -> new HTTPResponse(HTTPStatusCode.NOT_IMPLEMENTED);
+
+                    case GET -> {
+
+                            if (request.getHTTPHeaders("Authorization") == null)
+                                yield  new HTTPResponse(HTTPStatusCode.UNAUTHORIZED);
+
+                            List<CardData> output = userDBHandler.getAllCardsFromUserDeck(SessionHandler.getInstance().
+                                    getUserFromSession(UUID.fromString(request.getHTTPHeaders("Authorization")
+                                            .replaceFirst("^Bearer ", ""))));
+
+                            if (output.isEmpty())
+                                yield  new HTTPResponse(HTTPStatusCode.NO_CONTENT);
+
+                            yield  new HTTPResponse(HTTPStatusCode.OK, "application/json", new ObjectMapper().writeValueAsString(output));
+                    }
+
+
+                    case PUT -> {
+
+                        if (request.getHTTPHeaders("Authorization") == null)
+                            yield new HTTPResponse(HTTPStatusCode.UNAUTHORIZED);
+
+                        ObjectMapper objectMapper = new ObjectMapper();
+                        JsonNode jsonNode = objectMapper.readTree(request.getBody());
+
+                        List<UUID> cardList = new ArrayList<>();
+
+                        if (jsonNode.isArray()) {
+                            Iterator<JsonNode> elements = jsonNode.elements();
+                            while (elements.hasNext()) {
+                                JsonNode element = elements.next();
+                                if (element.isTextual()) {
+                                    UUID uuid = UUID.fromString(element.textValue());
+                                    cardList.add(uuid);
+                                }
+                            }
+                        }
+
+                        if (cardList.size() != 4)
+                            yield new HTTPResponse(HTTPStatusCode.BAD_REQUEST);
+
+                        System.out.println(cardList);
+
+                        if(!userDBHandler.checkIfCardsBelongToUser(cardList, SessionHandler.getInstance().
+                                getUserFromSession(UUID.fromString(request.getHTTPHeaders("Authorization")
+                                        .replaceFirst("^Bearer ", "")))))
+                            yield new HTTPResponse(HTTPStatusCode.FORBIDDEN);
+
+                        System.out.println("far");
+
+                        userDBHandler.updateStackOfUser(cardList, SessionHandler.getInstance().
+                                getUserFromSession(UUID.fromString(request.getHTTPHeaders("Authorization")
+                                        .replaceFirst("^Bearer ", ""))));
+
+                        yield new HTTPResponse(HTTPStatusCode.OK);
+
+                    }
                     default -> new HTTPResponse(HTTPStatusCode.NOT_FOUND);
                 };
             }

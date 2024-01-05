@@ -9,6 +9,7 @@ import baseClasses.Server.SessionHandler;
 import baseClasses.User.User;
 import baseClasses.User.UserCredentials;
 import baseClasses.User.UserData;
+import baseClasses.User.UserStats;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -30,14 +31,31 @@ public class UserService implements Service{
                         new HTTPResponse(HTTPStatusCode.UNAUTHORIZED);
             }
 
+            if (request.getPath().split("/")[1].equals("stats") && request.getMethod() == HTTPMethod.GET)
+            {
+                //get stats
+                if (request.getHTTPHeaders("Authorization") == null)
+                    return new HTTPResponse(HTTPStatusCode.UNAUTHORIZED);
+
+                UserStats myStats = userDBHandler.getUserStats(SessionHandler.getInstance().
+                        getUserFromSession(UUID.fromString(request.getHTTPHeaders("Authorization")
+                                .replaceFirst("^Bearer ", ""))));
+
+                return new HTTPResponse(HTTPStatusCode.OK, "application/json", new ObjectMapper().writeValueAsString(myStats));
+            }
+
             if (request.getPath().split("/")[1].equals("users")) {
                 System.out.println(request.getMethod());
                 return switch (request.getMethod()) {
                     case GET -> {
                         String username = request.getPath().split("/")[2];
-                        if (request.getHTTPHeaders("Authorization") == null ||  !SessionHandler.getInstance().verifySession(UUID.fromString(request.getHTTPHeaders("Authorization").replaceFirst("^Bearer ", "")), username, true))
+                        if (request.getHTTPHeaders("Authorization") == null ||
+                                !SessionHandler.getInstance().verifySession(UUID.fromString(request.getHTTPHeaders("Authorization")
+                                        .replaceFirst("^Bearer ", "")), username, true))
                             yield new HTTPResponse(HTTPStatusCode.UNAUTHORIZED);
+
                         UserData userData = userDBHandler.getUserDataFromDB(username);
+
                         if (userData.equals(null))
                             yield new HTTPResponse(HTTPStatusCode.NOT_FOUND);
 

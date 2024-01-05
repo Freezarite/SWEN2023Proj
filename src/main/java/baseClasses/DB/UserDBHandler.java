@@ -4,6 +4,8 @@ import baseClasses.Card.Card;
 import baseClasses.Card.CardData;
 import baseClasses.User.User;
 import baseClasses.User.UserData;
+import baseClasses.User.UserStats;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.sql.*;
 import java.util.*;
@@ -232,6 +234,99 @@ public class UserDBHandler implements DBBasic{
            System.out.println(output);
 
             return output;
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public boolean checkIfCardsBelongToUser(List<UUID> cardList, String username) {
+
+        List<CardData> collectionList = getAllCardsFromUser(username);
+        System.out.println(collectionList);
+
+        return cardList.stream().allMatch(card -> collectionList.stream().anyMatch(data -> data.id().equals(card)));
+    }
+
+    public List<CardData> getAllCardsFromUserDeck(String username) {
+        try(PreparedStatement statement = connection.prepareStatement(
+                "SELECT stack_id FROM users WHERE username = ?"
+        )) {
+            statement.setString(1, username);
+
+            ResultSet resultSet = statement.executeQuery();
+            List<CardData> output = new ArrayList<>();
+
+            if(!resultSet.next())
+                return null;
+
+            String[] idsString = resultSet.getObject(1).toString().replace("{", "")
+                    .replace("}", "").split(",");
+
+            for(String id : idsString) {
+                output.add(getCardDataForCard(UUID.fromString(id.trim())));
+            }
+
+            return output;
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public CardData getCardDataForCard(UUID card_id) {
+        try (PreparedStatement statement = connection.prepareStatement(
+                "SELECT card_id, card_name, damage FROM cards WHERE card_id = ?"
+        )) {
+
+            statement.setObject(1, card_id);
+
+            ResultSet resultSet = statement.executeQuery();
+
+            System.out.println(card_id);
+
+            if(!resultSet.next())
+                return null;
+
+            System.out.println(resultSet.getObject("card_name"));
+
+            return new CardData((UUID) resultSet.getObject("card_id"),
+                    resultSet.getString("card_name"), resultSet.getInt("damage"));
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void updateStackOfUser(List<UUID> newStack, String username) {
+        try(PreparedStatement preparedStatement = connection.prepareStatement(
+                "UPDATE users SET stack_id = ? WHERE username = ?"
+        )) {
+            preparedStatement.setArray(1, connection.createArrayOf("UUID", newStack.toArray()));
+            preparedStatement.setString(2, username);
+
+            preparedStatement.executeUpdate();
+            System.out.println("Updated deck!");
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public UserStats getUserStats(String username) {
+        try(PreparedStatement statement = connection.prepareStatement(
+                "SELECT name, elo, user_wins, user_losses FROM users WHERE username = ?"
+        )) {
+
+            statement.setString(1, username);
+            ResultSet resultSet = statement.executeQuery();
+
+            if(!resultSet.next())
+                return null;
+
+            return new UserStats(resultSet.getString("name"), resultSet.getInt("elo"),
+                    resultSet.getInt("user_wins"), resultSet.getInt("user_losses"),
+                    (double) resultSet.getInt("user_wins")/resultSet.getInt("user_losses"));
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
