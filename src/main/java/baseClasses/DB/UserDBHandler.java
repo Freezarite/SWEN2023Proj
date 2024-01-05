@@ -238,5 +238,67 @@ public class UserDBHandler implements DBBasic{
         }
     }
 
+    public boolean checkIfCardsBelongToUser(List<UUID> cardList, String username) {
+        /*try(PreparedStatement statement = connection.prepareStatement(
+                "SELECT cards.card_id" +
+                        "FROM users\n" +
+                        "JOIN cards ON cards.card_id = ANY(users.collection_id)\n" +
+                        "WHERE users.username = ?"
+        )) {
+            ResultSet resultSet = statement.executeQuery();
+            List<UUID> collectionList = new ArrayList<>();
+
+            boolean notEmpty = false;
+
+            while(resultSet.next()) {
+                notEmpty = true;
+                collectionList.add((UUID) resultSet.getObject("card_id"));
+            }
+
+            if(!notEmpty)
+                return notEmpty;
+
+            System.out.println("In db class" + collectionList);
+
+            for(UUID card : cardList) {
+                if(!collectionList.contains(card))
+                    return false;
+            }
+
+            return true;
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+       */
+
+        List<CardData> collectionList = getAllCardsFromUser(username);
+        for(UUID card : cardList) {
+            boolean contains = false;
+            for(CardData data : collectionList) {
+                if(data.id().equals(card))
+                    contains = true;
+            }
+            if(!contains)
+                return false;
+        }
+        return true;
+    }
+
+    public void updateStackOfUser(List<UUID> newStack, String username) {
+        try(PreparedStatement preparedStatement = connection.prepareStatement(
+                "UPDATE users SET stack_id = ? WHERE username = ?"
+        )) {
+            preparedStatement.setArray(1, connection.createArrayOf("UUID", newStack.toArray()));
+            preparedStatement.setString(2, username);
+
+            preparedStatement.executeUpdate();
+            System.out.println("Updated deck!");
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }
 

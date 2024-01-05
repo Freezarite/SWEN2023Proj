@@ -23,6 +23,8 @@ public class SpellCard extends Card{
                     return getCardDamage() / 2;
                 if(enemyCard.getCardElement().equals(elementType.PLANT))
                     return getCardDamage() * 2;
+                if(enemyCard.getCardElement().equals(elementType.UNDEAD))
+                    return getCardDamage() * 2;
 
             case PLANT:
                 if (enemyCard.getCardElement().equals(elementType.FIRE))
@@ -35,6 +37,12 @@ public class SpellCard extends Card{
                     return getCardDamage() / 2;
                 if (enemyCard.getCardElement().equals(elementType.FIRE))
                     return getCardDamage() * 2;
+
+            case UNDEAD:
+                if(enemyCard.getCardElement().equals(elementType.NORMAL))
+                    return getCardDamage() * 2;
+                if(enemyCard.getCardElement().equals(elementType.FIRE))
+                    return getCardDamage() / 2;
         }
         return this.getCardDamage();
     }

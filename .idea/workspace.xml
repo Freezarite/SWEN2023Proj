@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa2df69f-7d03-4842-97d6-ef5ee11aa4c7" name="Changes" comment="Much stuff added! such wow!">
-      <change afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Card/CardData.java" afterDir="false" />
+    <list default="true" id="fa2df69f-7d03-4842-97d6-ef5ee11aa4c7" name="Changes" comment="added /cards functionality">
+      <change afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Battle/DoubleBattle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/Battle/BattleHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Battle/BattleHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/Card/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Card/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/Card/SpellCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Card/SpellCard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/DB/UserDBHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/DB/UserDBHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/Server/SessionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Server/SessionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/Services/CardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Services/CardService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,14 +24,17 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Record" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -204,7 +209,9 @@
       <workItem from="1704333201456" duration="132000" />
       <workItem from="1704333344098" duration="201000" />
       <workItem from="1704309686121" duration="3838000" />
-      <workItem from="1704380814918" duration="28928000" />
+      <workItem from="1704380814918" duration="30380000" />
+      <workItem from="1704423462462" duration="1552000" />
+      <workItem from="1704454355879" duration="6242000" />
     </task>
     <task id="LOCAL-00001" summary="Added basic user and card classes">
       <created>1702379710680</created>
@@ -263,7 +270,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704410967620</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="added /cards functionality">
+      <option name="closed" value="true" />
+      <created>1704417189194</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1704417189194</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -289,7 +304,8 @@
     <MESSAGE value="Added further Unittests for MonsterCard and SpellCard&#10;Moved Unittests for Battle-Class into the Test-Folder" />
     <MESSAGE value="Startet BattleHandler and Services&#10;Added Package Class for buying new Cards&#10;Added some DB functionality&#10;Extended User to have Coins for the purchase of Packages&#10;Some further minor improvements" />
     <MESSAGE value="Much stuff added! such wow!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Much stuff added! such wow!" />
+    <MESSAGE value="added /cards functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="added /cards functionality" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
