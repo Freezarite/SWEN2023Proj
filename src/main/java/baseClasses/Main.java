@@ -9,6 +9,7 @@ import baseClasses.HTTP.HTTPMethod;
 import baseClasses.HTTP.Router;
 import baseClasses.Server.Server;
 import baseClasses.Services.BattleService;
+import baseClasses.Services.CardService;
 import baseClasses.Services.UserService;
 import baseClasses.User.User;
 
@@ -30,6 +31,8 @@ public class Main {
         router.addRoute(HTTPMethod.GET, "/users/{username}", new UserService(), new int[]{2});
         router.addRoute(HTTPMethod.PUT, "/users/{username}", new UserService(), new int[]{2});
         router.addRoute(HTTPMethod.POST, "/sessions", new UserService(), new int[]{});
+
+        router.addRoute(HTTPMethod.GET, "/cards", new CardService(), new int[]{});
 
         Server server = new Server(10001, 5, router);
         server.start();

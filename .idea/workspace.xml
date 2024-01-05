@@ -5,30 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa2df69f-7d03-4842-97d6-ef5ee11aa4c7" name="Changes" comment="Much stuff added! such wow!">
-      <change afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Server/SessionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Services/CardService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Services/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/baseClasses/User/UserCredentials.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/baseClasses/User/UserData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/baseClasses/User/UserInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/baseClasses/User/UserStats.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/DBTest/CardDBHandlerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/DBTest/UserDBHandlerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Card/CardData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/DB/CardDBHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/DB/CardDBHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/DB/DBBasic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/DB/DBBasic.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/DB/UserDBHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/DB/UserDBHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/HTTP/HTTPRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/HTTP/HTTPRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/HTTP/HTTPResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/HTTP/HTTPResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/HTTP/Router.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/HTTP/Router.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/Server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Server/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/Services/BattleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Services/BattleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/User/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/User/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/Server/SessionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Server/SessionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/Services/CardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Services/CardService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,8 +22,8 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="Record" />
         <option value="Class" />
+        <option value="Record" />
       </list>
     </option>
   </component>
@@ -76,7 +58,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "working",
     "kotlin-language-version-configured": "true",
     "last_directory_selection": "C:/Users/Markus/IdeaProjects/SWEN2023Proj/src/test/java",
     "last_opened_file_path": "C:/Users/Markus/IdeaProjects/FH Projects/SWEN2023Proj",
@@ -222,7 +204,7 @@
       <workItem from="1704333201456" duration="132000" />
       <workItem from="1704333344098" duration="201000" />
       <workItem from="1704309686121" duration="3838000" />
-      <workItem from="1704380814918" duration="23344000" />
+      <workItem from="1704380814918" duration="28928000" />
     </task>
     <task id="LOCAL-00001" summary="Added basic user and card classes">
       <created>1702379710680</created>
@@ -273,7 +255,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704281502583</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Much stuff added! such wow!">
+      <option name="closed" value="true" />
+      <created>1704410967620</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1704410967620</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

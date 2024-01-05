@@ -1,14 +1,12 @@
 package baseClasses.DB;
 
 import baseClasses.Card.Card;
+import baseClasses.Card.CardData;
 import baseClasses.User.User;
 import baseClasses.User.UserData;
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class UserDBHandler implements DBBasic{
 
@@ -210,6 +208,32 @@ public class UserDBHandler implements DBBasic{
             statement.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e);
+            throw new RuntimeException(e);
+        }
+    }
+
+    public List<CardData> getAllCardsFromUser(String username) {
+        try(PreparedStatement statement = connection.prepareStatement(
+                "SELECT cards.card_id, cards.card_name, cards.damage\n" +
+                        "FROM users\n" +
+                        "JOIN cards ON cards.card_id = ANY(users.collection_id)\n" +
+                        "WHERE users.username = ?"
+        )) {
+            statement.setString(1, username);
+
+           ResultSet resultSet = statement.executeQuery();
+           List<CardData> output = new ArrayList<>();
+
+           while(resultSet.next()) {
+               output.add(new CardData((UUID) resultSet.getObject("card_id"),
+                       resultSet.getString("card_name"), resultSet.getInt("damage")));
+           }
+
+           System.out.println(output);
+
+            return output;
+
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
