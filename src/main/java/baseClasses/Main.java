@@ -34,6 +34,7 @@ public class Main {
 
         router.addRoute(HTTPMethod.GET, "/cards", new CardService(), new int[]{});
         router.addRoute(HTTPMethod.PUT, "/deck", new CardService(), new int[]{});
+        router.addRoute(HTTPMethod.GET, "/deck", new CardService(), new int[]{});
 
         Server server = new Server(10001, 5, router);
         server.start();

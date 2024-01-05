@@ -12,6 +12,7 @@ import baseClasses.Server.SessionHandler;
 import baseClasses.User.UserData;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -40,7 +41,23 @@ public class CardService implements Service{
 
             if(request.getPath().split("/")[1].equals("deck")) {
                 return switch (request.getMethod()) {
-                    case GET -> new HTTPResponse(HTTPStatusCode.NOT_IMPLEMENTED);
+
+                    case GET -> {
+
+                            if (request.getHTTPHeaders("Authorization") == null)
+                                yield  new HTTPResponse(HTTPStatusCode.UNAUTHORIZED);
+
+                            List<CardData> output = userDBHandler.getAllCardsFromUserDeck(SessionHandler.getInstance().
+                                    getUserFromSession(UUID.fromString(request.getHTTPHeaders("Authorization")
+                                            .replaceFirst("^Bearer ", ""))));
+
+                            if (output.isEmpty())
+                                yield  new HTTPResponse(HTTPStatusCode.NO_CONTENT);
+
+                            yield  new HTTPResponse(HTTPStatusCode.OK, "application/json", new ObjectMapper().writeValueAsString(output));
+                    }
+
+
                     case PUT -> {
 
                         if (request.getHTTPHeaders("Authorization") == null)
@@ -67,7 +84,7 @@ public class CardService implements Service{
 
                         System.out.println(cardList);
 
-                        if(userDBHandler.checkIfCardsBelongToUser(cardList, SessionHandler.getInstance().
+                        if(!userDBHandler.checkIfCardsBelongToUser(cardList, SessionHandler.getInstance().
                                 getUserFromSession(UUID.fromString(request.getHTTPHeaders("Authorization")
                                         .replaceFirst("^Bearer ", "")))))
                             yield new HTTPResponse(HTTPStatusCode.FORBIDDEN);

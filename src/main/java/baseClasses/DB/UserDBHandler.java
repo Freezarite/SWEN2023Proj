@@ -4,6 +4,8 @@ import baseClasses.Card.Card;
 import baseClasses.Card.CardData;
 import baseClasses.User.User;
 import baseClasses.User.UserData;
+import baseClasses.User.UserStats;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.sql.*;
 import java.util.*;
@@ -239,50 +241,61 @@ public class UserDBHandler implements DBBasic{
     }
 
     public boolean checkIfCardsBelongToUser(List<UUID> cardList, String username) {
-        /*try(PreparedStatement statement = connection.prepareStatement(
-                "SELECT cards.card_id" +
-                        "FROM users\n" +
-                        "JOIN cards ON cards.card_id = ANY(users.collection_id)\n" +
-                        "WHERE users.username = ?"
+
+        List<CardData> collectionList = getAllCardsFromUser(username);
+        System.out.println(collectionList);
+
+        return cardList.stream().allMatch(card -> collectionList.stream().anyMatch(data -> data.id().equals(card)));
+    }
+
+    public List<CardData> getAllCardsFromUserDeck(String username) {
+        try(PreparedStatement statement = connection.prepareStatement(
+                "SELECT stack_id FROM users WHERE username = ?"
         )) {
+            statement.setString(1, username);
+
             ResultSet resultSet = statement.executeQuery();
-            List<UUID> collectionList = new ArrayList<>();
+            List<CardData> output = new ArrayList<>();
 
-            boolean notEmpty = false;
+            if(!resultSet.next())
+                return null;
 
-            while(resultSet.next()) {
-                notEmpty = true;
-                collectionList.add((UUID) resultSet.getObject("card_id"));
+            String[] idsString = resultSet.getObject(1).toString().replace("{", "")
+                    .replace("}", "").split(",");
+
+            for(String id : idsString) {
+                output.add(getCardDataForCard(UUID.fromString(id.trim())));
             }
 
-            if(!notEmpty)
-                return notEmpty;
-
-            System.out.println("In db class" + collectionList);
-
-            for(UUID card : cardList) {
-                if(!collectionList.contains(card))
-                    return false;
-            }
-
-            return true;
+            return output;
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-       */
+    }
 
-        List<CardData> collectionList = getAllCardsFromUser(username);
-        for(UUID card : cardList) {
-            boolean contains = false;
-            for(CardData data : collectionList) {
-                if(data.id().equals(card))
-                    contains = true;
-            }
-            if(!contains)
-                return false;
+    public CardData getCardDataForCard(UUID card_id) {
+        try (PreparedStatement statement = connection.prepareStatement(
+                "SELECT card_id, card_name, damage FROM cards WHERE card_id = ?"
+        )) {
+
+            statement.setObject(1, card_id);
+
+            ResultSet resultSet = statement.executeQuery();
+
+            System.out.println(card_id);
+
+            if(!resultSet.next())
+                return null;
+
+            System.out.println(resultSet.getObject("card_name"));
+
+            return new CardData((UUID) resultSet.getObject("card_id"),
+                    resultSet.getString("card_name"), resultSet.getInt("damage"));
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
-        return true;
     }
 
     public void updateStackOfUser(List<UUID> newStack, String username) {
@@ -294,6 +307,26 @@ public class UserDBHandler implements DBBasic{
 
             preparedStatement.executeUpdate();
             System.out.println("Updated deck!");
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public UserStats getUserStats(String username) {
+        try(PreparedStatement statement = connection.prepareStatement(
+                "SELECT name, elo, user_wins, user_losses FROM users WHERE username = ?"
+        )) {
+
+            statement.setString(1, username);
+            ResultSet resultSet = statement.executeQuery();
+
+            if(!resultSet.next())
+                return null;
+
+            return new UserStats(resultSet.getString("name"), resultSet.getInt("elo"),
+                    resultSet.getInt("user_wins"), resultSet.getInt("user_losses"),
+                    (double) resultSet.getInt("user_wins")/resultSet.getInt("user_losses"));
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
