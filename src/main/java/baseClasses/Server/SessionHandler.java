@@ -24,6 +24,11 @@ public final class SessionHandler {
         return INSTANCE;
     }
 
+    public String getUserFromSession(UUID sessionId) {
+        UserInfo userInfo = Sessions.get(sessionId);
+        return userInfo.username();
+    }
+
     public UUID login(UserCredentials userCredentials) throws SQLException {
 
         UserDBHandler userDBHandler = new UserDBHandler();
