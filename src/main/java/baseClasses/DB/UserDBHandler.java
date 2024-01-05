@@ -315,7 +315,7 @@ public class UserDBHandler implements DBBasic{
 
     public UserStats getUserStats(String username) {
         try(PreparedStatement statement = connection.prepareStatement(
-                "SELECT name, elo, user_wins, user_losses FROM users WHERE username = ?"
+                "SELECT name, user_elo, user_wins, user_losses FROM users WHERE username = ?"
         )) {
 
             statement.setString(1, username);
@@ -324,9 +324,31 @@ public class UserDBHandler implements DBBasic{
             if(!resultSet.next())
                 return null;
 
-            return new UserStats(resultSet.getString("name"), resultSet.getInt("elo"),
+            return new UserStats(resultSet.getString("name"), resultSet.getInt("user_elo"),
                     resultSet.getInt("user_wins"), resultSet.getInt("user_losses"),
-                    (double) resultSet.getInt("user_wins")/resultSet.getInt("user_losses"));
+                    (resultSet.getInt("user_losses") > 1) ?
+                            (double) resultSet.getInt("user_wins")/resultSet.getInt("user_losses") : 0);
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public List<UserStats> getAllUserStats() {
+        try(PreparedStatement preparedStatement = connection.prepareStatement(
+                "SELECT name, user_elo, user_wins, user_losses FROM users"
+        )) {
+
+            List<UserStats> output = new ArrayList<>();
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next())
+                output.add(new UserStats(resultSet.getString("name"), resultSet.getInt("user_elo"),
+                        resultSet.getInt("user_wins"), resultSet.getInt("user_losses"),
+                        (resultSet.getInt("user_losses") > 1) ?
+                                (double) resultSet.getInt("user_wins")/resultSet.getInt("user_losses") : 0));
+
+            return output;
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
