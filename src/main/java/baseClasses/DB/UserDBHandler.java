@@ -23,6 +23,10 @@ public class UserDBHandler implements DBBasic{
         }
     }
 
+    public void setConnection(Connection connection) {
+        this.connection = connection;
+    }
+
     public Connection getConnection() {return this.connection;}
 
 

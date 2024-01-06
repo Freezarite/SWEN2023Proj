@@ -4,20 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa2df69f-7d03-4842-97d6-ef5ee11aa4c7" name="Changes" comment="added battleService functionality">
-      <change afterPath="$PROJECT_DIR$/src/test/java/HTTP/RouterTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Services/UserServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="fa2df69f-7d03-4842-97d6-ef5ee11aa4c7" name="Changes" comment="added some tests">
+      <change afterPath="$PROJECT_DIR$/src/test/java/HTTP/HTTPRequestTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/DB/CardDBHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/DB/CardDBHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/DB/UserDBHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/DB/UserDBHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/HTTP/HTTPRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/HTTP/HTTPRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/HTTP/HTTPResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/HTTP/HTTPResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/HTTP/Router.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/HTTP/Router.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/Server/SessionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Server/SessionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/DBTest/CardDBHandlerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/DBTest/UserDBHandlerTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,9 +28,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -58,6 +49,11 @@
     "Downloaded.Files.Path.Enabled": "false",
     "JUnit.BattleTest.executor": "Run",
     "JUnit.CardDBHandlerTest.addMonsterCardTest.executor": "Run",
+    "JUnit.HTTPRequestHandlerTest.testRun.executor": "Run",
+    "JUnit.HTTPRequestTest.executor": "Run",
+    "JUnit.HTTPRequestTest.testCorrectParsing.executor": "Run",
+    "JUnit.HTTPRequestTest.testEmptyInput.executor": "Run",
+    "JUnit.HTTPRequestTest.testFalseInput.executor": "Run",
     "JUnit.HTTPRequestTest.testValidHTTPRequest.executor": "Run",
     "JUnit.RouterTest.executor": "Run",
     "JUnit.RouterTest.testAddRoute.executor": "Run",
@@ -67,8 +63,10 @@
     "JUnit.SessionHandlerTest.testLoginSuccess.executor": "Run",
     "JUnit.SessionHandlerTest.testUserLogin.executor": "Run",
     "JUnit.UserDBHandlerTest.createUser_Success.executor": "Run",
+    "JUnit.UserDBHandlerTest.executor": "Run",
     "JUnit.UserDBHandlerTest.testCreateUser.executor": "Run",
     "JUnit.UserDBHandlerTest.testUpdateUser.executor": "Run",
+    "JUnit.UserDBHandlerTest.testUserCreation.executor": "Run",
     "JUnit.UserServiceTest.TestCorrectUserLogin.executor": "Run",
     "JUnit.UserServiceTest.testGettingUserStats.executor": "Run",
     "Maven.SWEN2023Proj [clean,install].executor": "Run",
@@ -110,78 +108,81 @@
       <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.SessionHandlerTest">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="baseClasses.Main" />
+  <component name="RunManager" selected="JUnit.HTTPRequestHandlerTest.testRun">
+    <configuration name="HTTPRequestHandlerTest.testRun" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SWEN2023Proj" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="baseClasses.*" />
+          <option name="PATTERN" value="HTTP.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="HTTP" />
+      <option name="MAIN_CLASS_NAME" value="HTTP.HTTPRequestHandlerTest" />
+      <option name="METHOD_NAME" value="testRun" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SessionHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HTTPRequestTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SWEN2023Proj" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Server.*" />
+          <option name="PATTERN" value="HTTP.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="Server" />
-      <option name="MAIN_CLASS_NAME" value="Server.SessionHandlerTest" />
+      <option name="PACKAGE_NAME" value="HTTP" />
+      <option name="MAIN_CLASS_NAME" value="HTTP.HTTPRequestTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SessionHandlerTest.testLoginSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HTTPRequestTest.testCorrectParsing" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SWEN2023Proj" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Server.*" />
+          <option name="PATTERN" value="HTTP.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="Server" />
-      <option name="MAIN_CLASS_NAME" value="Server.SessionHandlerTest" />
-      <option name="METHOD_NAME" value="testLoginSuccess" />
+      <option name="PACKAGE_NAME" value="HTTP" />
+      <option name="MAIN_CLASS_NAME" value="HTTP.HTTPRequestTest" />
+      <option name="METHOD_NAME" value="testCorrectParsing" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SessionHandlerTest.testUserLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HTTPRequestTest.testEmptyInput" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SWEN2023Proj" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Server.*" />
+          <option name="PATTERN" value="HTTP.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="Server" />
-      <option name="MAIN_CLASS_NAME" value="Server.SessionHandlerTest" />
-      <option name="METHOD_NAME" value="testUserLogin" />
+      <option name="PACKAGE_NAME" value="HTTP" />
+      <option name="MAIN_CLASS_NAME" value="HTTP.HTTPRequestTest" />
+      <option name="METHOD_NAME" value="testEmptyInput" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserServiceTest.testGettingUserStats" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HTTPRequestTest.testFalseInput" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SWEN2023Proj" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Services.*" />
+          <option name="PATTERN" value="HTTP.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="Services" />
-      <option name="MAIN_CLASS_NAME" value="Services.UserServiceTest" />
-      <option name="METHOD_NAME" value="testGettingUserStats" />
+      <option name="PACKAGE_NAME" value="HTTP" />
+      <option name="MAIN_CLASS_NAME" value="HTTP.HTTPRequestTest" />
+      <option name="METHOD_NAME" value="testFalseInput" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -189,11 +190,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SessionHandlerTest" />
-        <item itemvalue="JUnit.SessionHandlerTest.testLoginSuccess" />
-        <item itemvalue="JUnit.SessionHandlerTest.testUserLogin" />
-        <item itemvalue="JUnit.UserServiceTest.testGettingUserStats" />
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.HTTPRequestHandlerTest.testRun" />
+        <item itemvalue="JUnit.HTTPRequestTest.testEmptyInput" />
+        <item itemvalue="JUnit.HTTPRequestTest.testFalseInput" />
+        <item itemvalue="JUnit.HTTPRequestTest" />
+        <item itemvalue="JUnit.HTTPRequestTest.testCorrectParsing" />
       </list>
     </recent_temporary>
   </component>
@@ -227,7 +228,8 @@
       <workItem from="1704309686121" duration="3838000" />
       <workItem from="1704380814918" duration="30380000" />
       <workItem from="1704423462462" duration="1552000" />
-      <workItem from="1704454355879" duration="35800000" />
+      <workItem from="1704454355879" duration="36314000" />
+      <workItem from="1704566360520" duration="6640000" />
     </task>
     <task id="LOCAL-00001" summary="Added basic user and card classes">
       <created>1702379710680</created>
@@ -326,7 +328,23 @@
       <option name="project" value="LOCAL" />
       <updated>1704492110624</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="added some tests">
+      <option name="closed" value="true" />
+      <created>1704505357597</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1704505357597</updated>
+    </task>
+    <task id="LOCAL-00015" summary="added some tests">
+      <option name="closed" value="true" />
+      <created>1704505492590</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1704505492590</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -357,7 +375,8 @@
     <MESSAGE value="added viewing of deck and startet on userstats viewing" />
     <MESSAGE value="added scoreboard" />
     <MESSAGE value="added battleService functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="added battleService functionality" />
+    <MESSAGE value="added some tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="added some tests" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
