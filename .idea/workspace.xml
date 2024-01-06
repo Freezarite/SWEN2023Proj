@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa2df69f-7d03-4842-97d6-ef5ee11aa4c7" name="Changes" comment="added some tests">
-      <change afterPath="$PROJECT_DIR$/src/test/java/HTTP/HTTPRequestTest.java" afterDir="false" />
+    <list default="true" id="fa2df69f-7d03-4842-97d6-ef5ee11aa4c7" name="Changes" comment="updated BattleHandler, adder documentation">
+      <change afterPath="$PROJECT_DIR$/src/test/java/HTTP/HTTPResponseTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/DB/UserDBHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/DB/UserDBHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BattleTest/BattleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BattleTest/BattleTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +47,7 @@
     "Application.Main.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
     "JUnit.BattleTest.executor": "Run",
+    "JUnit.BattleTest.testEloCalculationsOfDifferentUsers.executor": "Run",
     "JUnit.CardDBHandlerTest.addMonsterCardTest.executor": "Run",
     "JUnit.HTTPRequestHandlerTest.testRun.executor": "Run",
     "JUnit.HTTPRequestTest.executor": "Run",
@@ -55,6 +55,9 @@
     "JUnit.HTTPRequestTest.testEmptyInput.executor": "Run",
     "JUnit.HTTPRequestTest.testFalseInput.executor": "Run",
     "JUnit.HTTPRequestTest.testValidHTTPRequest.executor": "Run",
+    "JUnit.HTTPResponseTest.checkForCorrectResponseWithContent.executor": "Run",
+    "JUnit.HTTPResponseTest.checkForCorrectResponseWithNoContent.executor": "Run",
+    "JUnit.HTTPResponseTest.executor": "Run",
     "JUnit.RouterTest.executor": "Run",
     "JUnit.RouterTest.testAddRoute.executor": "Run",
     "JUnit.RouterTest.testRouting.executor": "Run",
@@ -108,55 +111,39 @@
       <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.HTTPRequestHandlerTest.testRun">
-    <configuration name="HTTPRequestHandlerTest.testRun" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.HTTPResponseTest.checkForCorrectResponseWithContent">
+    <configuration name="BattleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SWEN2023Proj" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="HTTP.*" />
+          <option name="PATTERN" value="BattleTest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="HTTP" />
-      <option name="MAIN_CLASS_NAME" value="HTTP.HTTPRequestHandlerTest" />
-      <option name="METHOD_NAME" value="testRun" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HTTPRequestTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SWEN2023Proj" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="HTTP.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="HTTP" />
-      <option name="MAIN_CLASS_NAME" value="HTTP.HTTPRequestTest" />
+      <option name="PACKAGE_NAME" value="BattleTest" />
+      <option name="MAIN_CLASS_NAME" value="BattleTest.BattleTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HTTPRequestTest.testCorrectParsing" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BattleTest.testEloCalculationsOfDifferentUsers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SWEN2023Proj" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="HTTP.*" />
+          <option name="PATTERN" value="BattleTest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="HTTP" />
-      <option name="MAIN_CLASS_NAME" value="HTTP.HTTPRequestTest" />
-      <option name="METHOD_NAME" value="testCorrectParsing" />
+      <option name="PACKAGE_NAME" value="BattleTest" />
+      <option name="MAIN_CLASS_NAME" value="BattleTest.BattleTest" />
+      <option name="METHOD_NAME" value="testEloCalculationsOfDifferentUsers" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HTTPRequestTest.testEmptyInput" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HTTPResponseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SWEN2023Proj" />
       <extension name="coverage">
         <pattern>
@@ -165,14 +152,29 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="HTTP" />
-      <option name="MAIN_CLASS_NAME" value="HTTP.HTTPRequestTest" />
-      <option name="METHOD_NAME" value="testEmptyInput" />
+      <option name="MAIN_CLASS_NAME" value="HTTP.HTTPResponseTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HTTPResponseTest.checkForCorrectResponseWithContent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SWEN2023Proj" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="HTTP.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="HTTP" />
+      <option name="MAIN_CLASS_NAME" value="HTTP.HTTPResponseTest" />
+      <option name="METHOD_NAME" value="checkForCorrectResponseWithContent" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HTTPRequestTest.testFalseInput" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HTTPResponseTest.checkForCorrectResponseWithNoContent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SWEN2023Proj" />
       <extension name="coverage">
         <pattern>
@@ -181,8 +183,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="HTTP" />
-      <option name="MAIN_CLASS_NAME" value="HTTP.HTTPRequestTest" />
-      <option name="METHOD_NAME" value="testFalseInput" />
+      <option name="MAIN_CLASS_NAME" value="HTTP.HTTPResponseTest" />
+      <option name="METHOD_NAME" value="checkForCorrectResponseWithNoContent" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -190,11 +192,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.HTTPRequestHandlerTest.testRun" />
-        <item itemvalue="JUnit.HTTPRequestTest.testEmptyInput" />
-        <item itemvalue="JUnit.HTTPRequestTest.testFalseInput" />
-        <item itemvalue="JUnit.HTTPRequestTest" />
-        <item itemvalue="JUnit.HTTPRequestTest.testCorrectParsing" />
+        <item itemvalue="JUnit.HTTPResponseTest.checkForCorrectResponseWithContent" />
+        <item itemvalue="JUnit.HTTPResponseTest" />
+        <item itemvalue="JUnit.HTTPResponseTest.checkForCorrectResponseWithNoContent" />
+        <item itemvalue="JUnit.BattleTest.testEloCalculationsOfDifferentUsers" />
+        <item itemvalue="JUnit.BattleTest" />
       </list>
     </recent_temporary>
   </component>
@@ -229,7 +231,7 @@
       <workItem from="1704380814918" duration="30380000" />
       <workItem from="1704423462462" duration="1552000" />
       <workItem from="1704454355879" duration="36314000" />
-      <workItem from="1704566360520" duration="6640000" />
+      <workItem from="1704566360520" duration="9922000" />
     </task>
     <task id="LOCAL-00001" summary="Added basic user and card classes">
       <created>1702379710680</created>
@@ -344,7 +346,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704505492590</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="updated BattleHandler, adder documentation">
+      <option name="closed" value="true" />
+      <created>1704574252487</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1704574252487</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -376,7 +386,8 @@
     <MESSAGE value="added scoreboard" />
     <MESSAGE value="added battleService functionality" />
     <MESSAGE value="added some tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="added some tests" />
+    <MESSAGE value="updated BattleHandler, adder documentation" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated BattleHandler, adder documentation" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

@@ -72,7 +72,7 @@ public class BattleTest {
 
     @Test
     public void testEloCalculationsOfDifferentUsers() {
-        //update ELOs for testing purposes
+        //updates ELOs to make it different between the users
         player1.updateUserElo(100);
         player2.updateUserElo(-200);
 
@@ -87,8 +87,8 @@ public class BattleTest {
             throw new RuntimeException(e);
         }
 
-        assertEquals(player1.getUserElo(), 583);
-        assertEquals(player2.getUserElo(), 317);
+        assertEquals(583, player1.getUserElo());
+        assertEquals(317, player2.getUserElo());
     }
 
     @Test
