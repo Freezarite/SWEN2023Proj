@@ -13,7 +13,7 @@ public class BattleHandler {
     private static BattleHandler instance;
     private User user1;
     private User user2;
-    private boolean userAlreadyWaiting;
+    private boolean userAlreadyWaiting = false;
     private final Lock lock = new ReentrantLock();
 
     private UserDBHandler userDBHandler = new UserDBHandler();
@@ -29,11 +29,13 @@ public class BattleHandler {
         while(!locked)
             locked = lock.tryLock();
 
-        if(user1 == null) {
+        if(!userAlreadyWaiting) {
+            userAlreadyWaiting = true;
             user1 = userDBHandler.getUserInstanceFromDB(username);
             battle.addUser1(user1);
             lock.unlock();
             wait();
+            user1 = battle.returnPlayer1();
             userDBHandler.updateUserBasedOnInstance(user1, username);
             lock.unlock();
             return this.battle.getBattleLog();
@@ -41,7 +43,9 @@ public class BattleHandler {
 
         battle.addUser2(user2);
         battle.commenceBattle();
+        user2 = battle.returnPlayer2();
         userDBHandler.updateUserBasedOnInstance(user2, username);
+        userAlreadyWaiting = false;
         notifyAll();
         return this.battle.getBattleLog();
 
