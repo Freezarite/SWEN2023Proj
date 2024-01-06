@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa2df69f-7d03-4842-97d6-ef5ee11aa4c7" name="Changes" comment="updated BattleHandler, adder documentation">
-      <change afterPath="$PROJECT_DIR$/src/test/java/HTTP/HTTPResponseTest.java" afterDir="false" />
+    <list default="true" id="fa2df69f-7d03-4842-97d6-ef5ee11aa4c7" name="Changes" comment="new unittests for HTTPResponse">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/BattleTest/BattleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BattleTest/BattleTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,7 +229,7 @@
       <workItem from="1704380814918" duration="30380000" />
       <workItem from="1704423462462" duration="1552000" />
       <workItem from="1704454355879" duration="36314000" />
-      <workItem from="1704566360520" duration="9922000" />
+      <workItem from="1704566360520" duration="10852000" />
     </task>
     <task id="LOCAL-00001" summary="Added basic user and card classes">
       <created>1702379710680</created>
@@ -354,7 +352,23 @@
       <option name="project" value="LOCAL" />
       <updated>1704574252487</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="new unittests for HTTPResponse">
+      <option name="closed" value="true" />
+      <created>1704581559136</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1704581559136</updated>
+    </task>
+    <task id="LOCAL-00018" summary="new unittests for HTTPResponse">
+      <option name="closed" value="true" />
+      <created>1704581801187</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1704581801187</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -387,7 +401,8 @@
     <MESSAGE value="added battleService functionality" />
     <MESSAGE value="added some tests" />
     <MESSAGE value="updated BattleHandler, adder documentation" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated BattleHandler, adder documentation" />
+    <MESSAGE value="new unittests for HTTPResponse" />
+    <option name="LAST_COMMIT_MESSAGE" value="new unittests for HTTPResponse" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
