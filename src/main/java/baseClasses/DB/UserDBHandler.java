@@ -23,6 +23,8 @@ public class UserDBHandler implements DBBasic{
         }
     }
 
+    public Connection getConnection() {return this.connection;}
+
 
     public boolean createUser(String username, String password) {
         try {
@@ -61,7 +63,7 @@ public class UserDBHandler implements DBBasic{
         }
     }
 
-    private boolean userExists(String username) throws SQLException {
+    public boolean userExists(String username) throws SQLException {
         try (PreparedStatement statement = connection.prepareStatement(
                 "SELECT COUNT(*) AS count FROM users WHERE username = ?")) {
             statement.setString(1, username);

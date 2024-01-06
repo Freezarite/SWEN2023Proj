@@ -13,6 +13,13 @@ public final class SessionHandler {
     private static SessionHandler INSTANCE;
     private final Map<UUID, UserInfo> Sessions = new HashMap<>();
 
+    private final UserDBHandler userDBHandler = new UserDBHandler();
+
+    //for testing
+    public UserInfo getUserInfoFromMap(UUID id) {
+        return Sessions.get(id);
+    }
+
     private SessionHandler() {
 
     }
@@ -30,8 +37,6 @@ public final class SessionHandler {
     }
 
     public UUID login(UserCredentials userCredentials) throws SQLException {
-
-        UserDBHandler userDBHandler = new UserDBHandler();
 
         //System.out.println(userCredentials);
 
@@ -61,4 +66,5 @@ public final class SessionHandler {
     public boolean verifySession(UUID sessionId) {
         return verifySession(sessionId, false);
     }
+
 }

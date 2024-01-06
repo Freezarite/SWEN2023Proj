@@ -125,15 +125,6 @@ public class CardDBHandler implements DBBasic {
         }
     }
 
-    // Delete
-    public void deleteCard(UUID cardId) throws SQLException {
-        try (PreparedStatement statement = connection.prepareStatement(
-                "DELETE FROM cards WHERE card_id=?")) {
-            statement.setObject(1, cardId);
-            statement.executeUpdate();
-        }
-    }
-
     public Connection getConnection() {
         return this.connection;
     }
