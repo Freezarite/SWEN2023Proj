@@ -42,6 +42,8 @@ These were also implemented to test if all the battle requirements where met.
 This tests if Services are added correctly and can be called by the wanted http call. Sadly due to time constraints further testing could not be implemented.
 ### UserService test (3h)
 This tests if the login of users works as planned. They were also added to get some practice with Mockito and its included testing functionalities, like mocking database calls.
+### HTTP RequestTest and HTTPResponseTest (1h)
+Some small tests for checking the correct format and parsing of HTTP requests and responses.
 ### Started but not implemented tests due to them not working correctly ;-; (5h)
 
 ## Git repository
