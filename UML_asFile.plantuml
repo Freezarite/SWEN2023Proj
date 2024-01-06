@@ -1,0 +1,248 @@
+@startuml
+
+!theme plain
+top to bottom direction
+skinparam linetype ortho
+
+class Battle {
+  + Battle(User, User): 
+  - battleLog: String
+  + returnPlayer1(): User
+  - calcWinProb(int, int): double
+  + commenceBattle(): void
+  - updateELOofUsers(int): void
+  + addUser1(User): void
+  + addUser2(User): void
+  - battleDecks(): int
+  + returnPlayer2(): User
+   battleLog: String
+}
+class BattleHandler {
+  + BattleHandler(): 
+  - instance: BattleHandler
+  + createOrJoinBattle(String): String
+   instance: BattleHandler
+}
+class BattleService {
+  + BattleService(): 
+  + handleRequest(HTTPRequest): HTTPResponse
+}
+class Card {
+  + Card(UUID, String, int, elementType): 
+  - cardName: String
+  - cardElement: elementType
+  - id: UUID
+  - cardDamage: int
+  + beAttacked(Card): boolean
+  + getBattleDamage(Card): int
+   cardName: String
+   id: UUID
+   cardElement: elementType
+   cardDamage: int
+}
+class CardDBHandler {
+  + CardDBHandler(): 
+  - connection: Connection
+  + addSpellCard(SpellCard): void
+  + updateCard(Card): void
+  + addMonsterCard(MonsterCard): void
+  + getCard(UUID): Card
+   connection: Connection
+   allCards: List<Card>
+}
+entity CardData << record >> {
+  + CardData(UUID, String, int): 
+  + damage(): int
+  + id(): UUID
+  + name(): String
+}
+class CardService {
+  + CardService(): 
+  + handleRequest(HTTPRequest): HTTPResponse
+}
+interface DBBasic << interface >>
+enum HTTPMethod << enumeration >> {
+  + HTTPMethod(): 
+  + strToMethod(String): HTTPMethod
+  + valueOf(String): HTTPMethod
+  + values(): HTTPMethod[]
+}
+class HTTPRequest {
+  + HTTPRequest(BufferedReader): 
+  - path: String
+  - method: HTTPMethod
+  - version: String
+  - body: String
+  + getHTTPHeaders(String): String
+  + addHTTPHeader(String, String): void
+   method: HTTPMethod
+   version: String
+   body: String
+   path: String
+}
+class HTTPRequestHandler {
+  + HTTPRequestHandler(Socket, Router): 
+  + run(): void
+}
+class HTTPResponse {
+  + HTTPResponse(HTTPStatusCode, String, String): 
+  + HTTPResponse(HTTPStatusCode): 
+  - httpStatusCode: HTTPStatusCode
+  - content: String
+   content: String
+   request: String
+   httpStatusCode: HTTPStatusCode
+}
+enum HTTPStatusCode << enumeration >> {
+  - HTTPStatusCode(int, String): 
+  - reasonPhrase: String
+  - code: int
+  + valueOf(String): HTTPStatusCode
+  + values(): HTTPStatusCode[]
+   code: int
+   reasonPhrase: String
+}
+class Main {
+  + Main(): 
+  + main(String[]): void
+}
+class MonsterCard {
+  + MonsterCard(UUID, String, int, elementType, monsterType): 
+  + beAttacked(Card): boolean
+  + getBattleDamage(Card): int
+   monsterType: monsterType
+}
+class Package {
+  + Package(String, int, List<Card>): 
+  - packageName: String
+   packageName: String
+}
+class PackageDBHandler {
+  + PackageDBHandler(): 
+}
+class PackageHandler {
+  + PackageHandler(): 
+}
+entity Route << record >> {
+  + Route(Service, Boolean): 
+  + service(): Service
+  + hasPath(): Boolean
+}
+class Router {
+  + Router(): 
+  + resolveRoute(HTTPMethod, String): Service
+  + addRoute(HTTPMethod, String, Service, int[]): void
+}
+class Server {
+  + Server(int, int, Router): 
+  + start(): void
+}
+interface Service << interface >> {
+  + handleRequest(HTTPRequest): HTTPResponse
+}
+class SessionHandler {
+  - SessionHandler(): 
+  + login(UserCredentials): UUID?
+  + getUserInfoFromMap(UUID): UserInfo
+  + verifySession(UUID, String): boolean
+  + verifySession(UUID, String, boolean): boolean
+  + getUserFromSession(UUID): String
+  + verifySession(UUID): boolean
+  + verifySession(UUID, boolean): boolean
+   instance: SessionHandler
+}
+class SpellCard {
+  + SpellCard(UUID, String, int, elementType): 
+  + getBattleDamage(Card): int
+  + beAttacked(Card): boolean
+}
+class User {
+  + User(String, int, int, int): 
+  - stack: List<Card>
+  - userWins: int
+  - username: String
+  - userElo: int
+  - userLosses: int
+  + updateUserElo(int): void
+  + loses(): void
+  + wins(): void
+  + editStack(List<Card>): void
+   userElo: int
+   userLosses: int
+   username: String
+   userWins: int
+   stack: List<Card>
+}
+entity UserCredentials << record >> {
+  + UserCredentials(String, String): 
+  + username(): String
+  + password(): String
+}
+class UserDBHandler {
+  + UserDBHandler(): 
+  - connection: Connection
+  + updateUserDataOfSpecificUser(String, UserData): void
+  + createUser(String, String): boolean
+  + getCardDataForCard(UUID): CardData
+  + getUserStats(String): UserStats
+  + updateUser(User): void
+  + checkIfCardsBelongToUser(List<UUID>, String): boolean
+  + userExists(String): boolean
+  + updateUserBasedOnInstance(User, String): void
+  + isAdmin(String): boolean
+  + updateStackOfUser(List<UUID>, String): void
+  + readUser(String): User
+  + getAllCardsFromUserDeck(String): List<CardData>
+  + loginUser(String, String): boolean
+  + getUserDataFromDB(String): UserData
+  + getAllCardsFromUser(String): List<CardData>
+  + getUserInstanceFromDB(String): User
+  + deleteUser(String): void
+   allUserStats: List<UserStats>
+   connection: Connection
+}
+entity UserData << record >> {
+  + UserData(String, String, String): 
+  + Name(): String
+  + Image(): String
+  + Bio(): String
+}
+entity UserInfo << record >> {
+  + UserInfo(String, boolean): 
+  - isAdmin: boolean
+  + username(): String
+   isAdmin: boolean
+}
+class UserService {
+  + UserService(): 
+  + handleRequest(HTTPRequest): HTTPResponse
+}
+entity UserStats << record >> {
+  + UserStats(String, int, int, int, double): 
+  + losses(): int
+  + wnr(): double
+  + name(): String
+  + wins(): int
+  + elo(): int
+}
+enum elementType << enumeration >> {
+  + elementType(): 
+  + values(): elementType[]
+  + valueOf(String): elementType
+}
+enum monsterType << enumeration >> {
+  + monsterType(): 
+  + values(): monsterType[]
+  + valueOf(String): monsterType
+}
+
+BattleService       -[#008200,dashed]-^  Service            
+CardDBHandler       -[#008200,dashed]-^  DBBasic            
+CardService         -[#008200,dashed]-^  Service            
+MonsterCard         -[#000082,plain]-^  Card               
+SpellCard           -[#000082,plain]-^  Card               
+UserDBHandler       -[#008200,dashed]-^  DBBasic            
+UserService         -[#008200,dashed]-^  Service            
+elementType         +-[#820000,plain]-  Card               
+monsterType         +-[#820000,plain]-  MonsterCard        
+@enduml
