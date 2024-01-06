@@ -40,4 +40,12 @@ public class HTTPResponse {
                 "\r\n" +
                 this.content;
     }
+
+    public String getContent() {
+        return this.content;
+    }
+
+    public HTTPStatusCode getHttpStatusCode() {
+        return this.httpStatusCode;
+    }
 }

@@ -20,20 +20,6 @@ public class Router {
         for(Integer pathVarPos : pathsVariables)
             routingComponents.set(pathVarPos, "{var}");
 
-        /*
-        for(int i = 0; i < routingComponents.size(); i++) {
-
-            String path = String.join("/", routingComponents.subList(0, i+1));
-            Route existingRoute = tempMap.get(path);
-
-            int finalI = i;
-
-            Route routeComponent = new Route(i == routingComponents.size() - 1 ? service : existingRoute != null ? existingRoute.service() : null,
-                    IntStream.of(pathsVariables).anyMatch(x -> x == (finalI + 1)) || (existingRoute != null && existingRoute.hasPath()));
-
-            tempMap.put(path, routeComponent);
-        }
-         */
 
         for (int i = 0; i < routingComponents.size(); i++) {
             String path = String.join("/", routingComponents.subList(0, i+1));

@@ -22,6 +22,8 @@ public class HTTPRequest {
 
         String line = buffer.readLine();
 
+        System.out.println(line);
+
         if (line != null) {
             String[] requestLine = line.split(" ");
             this.method = HTTPMethod.strToMethod(requestLine[0]);
@@ -29,13 +31,17 @@ public class HTTPRequest {
             this.version = requestLine[2];
 
             for (line = buffer.readLine(); !line.isEmpty(); line = buffer.readLine()) {
+                System.out.println(line);
                 String[] headerEntry = line.split(": ", 2);
                 this.HTTPHeaders.put(headerEntry[0], headerEntry[1]);
             }
 
+            System.out.println("end");
+
             int contentLength = this.HTTPHeaders.containsKey("Content-Length") ? Integer.parseInt(this.HTTPHeaders.get("Content-Length")) : 0;
             char[] charBuffer = new char[contentLength];
             this.body = buffer.read(charBuffer, 0, contentLength) > 0 ? new String(charBuffer) : null;
+            System.out.println("a\n" + this.body + "\nb");
             return;
         }
 
@@ -63,5 +69,10 @@ public class HTTPRequest {
 
     public String getHTTPHeaders(String specificHeader) {
         return this.HTTPHeaders.get(specificHeader);
+    }
+
+    //for testing
+    public void addHTTPHeader(String authorization, String bearerYourTokenHere) {
+        this.HTTPHeaders.put(authorization, bearerYourTokenHere);
     }
 }
