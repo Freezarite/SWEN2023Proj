@@ -4,13 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa2df69f-7d03-4842-97d6-ef5ee11aa4c7" name="Changes" comment="added deck configuration">
+    <list default="true" id="fa2df69f-7d03-4842-97d6-ef5ee11aa4c7" name="Changes" comment="added scoreboard">
+      <change afterPath="$PROJECT_DIR$/src/main/java/baseClasses/DB/PackageDBHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/Battle/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Battle/Battle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/Battle/BattleHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Battle/BattleHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/Card/Package.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Card/Package.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/DB/CardDBHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/DB/CardDBHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/DB/UserDBHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/DB/UserDBHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/Services/CardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Services/CardService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/Services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/User/UserStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/User/UserStats.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/Services/BattleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/Services/BattleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/baseClasses/User/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClasses/User/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,7 +213,7 @@
       <workItem from="1704309686121" duration="3838000" />
       <workItem from="1704380814918" duration="30380000" />
       <workItem from="1704423462462" duration="1552000" />
-      <workItem from="1704454355879" duration="12632000" />
+      <workItem from="1704454355879" duration="22286000" />
     </task>
     <task id="LOCAL-00001" summary="Added basic user and card classes">
       <created>1702379710680</created>
@@ -284,7 +288,23 @@
       <option name="project" value="LOCAL" />
       <updated>1704473771246</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="added viewing of deck and startet on userstats viewing">
+      <option name="closed" value="true" />
+      <created>1704481121785</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1704481121785</updated>
+    </task>
+    <task id="LOCAL-00012" summary="added scoreboard">
+      <option name="closed" value="true" />
+      <created>1704484768637</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1704484768637</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -312,7 +332,9 @@
     <MESSAGE value="Much stuff added! such wow!" />
     <MESSAGE value="added /cards functionality" />
     <MESSAGE value="added deck configuration" />
-    <option name="LAST_COMMIT_MESSAGE" value="added deck configuration" />
+    <MESSAGE value="added viewing of deck and startet on userstats viewing" />
+    <MESSAGE value="added scoreboard" />
+    <option name="LAST_COMMIT_MESSAGE" value="added scoreboard" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

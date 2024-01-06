@@ -97,8 +97,6 @@ public class Battle {
                 this.battleLog += "This battle ended in a Draw! ELOs have not been changed!";
         }
 
-        //TODO: Update DB based on results
-
         System.out.print(this.battleLog);
     }
 
@@ -137,4 +135,7 @@ public class Battle {
     public String getBattleLog() {
         return this.battleLog;
     }
+
+    public void addUser1(User user) {this.player1 = user;}
+    public void addUser2(User user) {this.player2 = user;}
 }

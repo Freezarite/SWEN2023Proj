@@ -15,7 +15,10 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.sql.SQLException;
+import java.util.Collections;
+import java.util.List;
 import java.util.UUID;
+import java.util.Comparator;
 
 public class UserService implements Service{
     @Override
@@ -27,7 +30,7 @@ public class UserService implements Service{
                 //System.out.println(request.getBody());
                 UUID uuid = SessionHandler.getInstance().login(new ObjectMapper().readValue(request.getBody(), UserCredentials.class));
                 return uuid != null ?
-                        new HTTPResponse(HTTPStatusCode.OK, "application/json", uuid.toString()) :
+                        new HTTPResponse(HTTPStatusCode.OK, "application/json", new ObjectMapper().writeValueAsString(uuid)) :
                         new HTTPResponse(HTTPStatusCode.UNAUTHORIZED);
             }
 
@@ -42,6 +45,21 @@ public class UserService implements Service{
                                 .replaceFirst("^Bearer ", ""))));
 
                 return new HTTPResponse(HTTPStatusCode.OK, "application/json", new ObjectMapper().writeValueAsString(myStats));
+            }
+
+            if(request.getPath().split("/")[1].equals("scoreboard") && request.getMethod() == HTTPMethod.GET)
+            {
+                if(request.getHTTPHeaders("Authorization") == null)
+                    return new HTTPResponse(HTTPStatusCode.UNAUTHORIZED);
+
+                List<UserStats> userStatsList = userDBHandler.getAllUserStats();
+
+                if(userStatsList == null)
+                    return new HTTPResponse(HTTPStatusCode.INTERNAL_SERVER_ERROR);
+
+                userStatsList.sort(Comparator.comparing(UserStats::elo));
+
+                return new HTTPResponse(HTTPStatusCode.OK, "application/json", new ObjectMapper().writeValueAsString(userStatsList));
             }
 
             if (request.getPath().split("/")[1].equals("users")) {
@@ -93,7 +111,7 @@ public class UserService implements Service{
 
                     };
                 }
-
+            System.out.println("Did not find request!");
             return new HTTPResponse(HTTPStatusCode.NOT_FOUND);
         }
         catch (ArrayIndexOutOfBoundsException e) {
